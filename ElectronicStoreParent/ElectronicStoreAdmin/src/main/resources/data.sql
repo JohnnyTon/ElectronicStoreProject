@@ -14,8 +14,12 @@ ALTER TABLE product ALTER COLUMN id RESTART WITH 4;
 INSERT INTO discount_deal (id, type, discount_percent, buy_quantity, get_quantity, expires_at, created_at, updated_at, version)
 VALUES (1, 'PERCENTAGE', 10.00, 0, 0, '2025-12-31T23:59:59', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0);
 
-ALTER TABLE discount_deal ALTER COLUMN id RESTART WITH 2;
+INSERT INTO discount_deal (id, type, buy_quantity, get_quantity, expires_at, created_at, updated_at, version)
+VALUES (2, 'BUY_X_GET_Y', 1, 1, '2025-12-31T23:59:59', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0);
+
+ALTER TABLE discount_deal ALTER COLUMN id RESTART WITH 3;
 
 -- Join table: discount_deal_product (discount_deal_id, product_id)
 INSERT INTO discount_deal_product (discount_deal_id, product_id) VALUES (1, 1);
 INSERT INTO discount_deal_product (discount_deal_id, product_id) VALUES (1, 2);
+INSERT INTO discount_deal_product (discount_deal_id, product_id) VALUES (2, 3);
