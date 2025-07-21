@@ -1,20 +1,20 @@
-# 📦 Electronic Store API Documentation
+# Electronic Store API Documentation
 
 This document contains the full list of RESTful API endpoints provided by the Electronic Store system.
 
 ---
 
-## 🔐 Authentication
+## Authentication
 
-❌ Currently, no authentication is implemented.
+Currently, no authentication is implemented.
 
 ---
 
-## 🛍️ Admin Endpoints
+## Admin Endpoints
 
-### 📦 Products
+### Products
 
-#### ➕ Create Product
+#### Create Product
 - **POST** `/admin/products`
 - **Body**: 
 ```json
@@ -37,9 +37,9 @@ Returns paginated products list.
 
 ---
 
-### 🧾 Discount Deals
+### Discount Deals
 
-#### ➕ Create Deal
+#### Create Deal
 - **POST** `/admin/deals`
 - **Body**: 
 ```json
@@ -54,18 +54,18 @@ Returns paginated products list.
 ```
 - **Response**: `201 Created`
 
-#### 🔍 Get Active Deals for Product
+#### Get Active Deals for Product
 - **GET** `/admin/deals/product/1`
 - **Response**: `200 OK`  
 Returns active discount deals for product ID `1`.
 
 ---
 
-## 👤 Customer Endpoints
+## Customer Endpoints
 
-### 🛒 Basket
+### Basket
 
-#### ➕ Add to Basket
+#### Add to Basket
 - **POST** `/basket/items`
 - **Body**: 
 ```json
@@ -77,7 +77,7 @@ Returns active discount deals for product ID `1`.
 ```
 - **Response**: `201 Created`
 
-#### ➖ Remove from Basket
+#### Remove from Basket
 - **DELETE** `/basket/items`
 - **Body**: 
 ```json
@@ -89,19 +89,19 @@ Returns active discount deals for product ID `1`.
 ```
 - **Response**: `200 OK`
 
-#### 🛒 View Basket
+#### View Basket
 - **GET** `/basket/{customerId}`
 - **Response**: `200 OK`  
 Returns the current contents of the customer's basket.
 
-#### 💳 Checkout
+#### Checkout
 - **GET** `/basket/{customerId}/checkout`
 - **Response**: `200 OK`  
 Returns a receipt object with items, prices, deals applied, and total.
 
 ---
 
-## 🧰 Error Handling
+## Error Handling
 
 All responses are wrapped in:
 ```json
@@ -114,7 +114,7 @@ All responses are wrapped in:
 
 ---
 
-## 📄 Notes
+## Notes
 
 - Products can be filtered by category, price range, and availability.
 - Product stock is updated when added or removed from the basket.
