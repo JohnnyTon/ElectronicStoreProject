@@ -30,7 +30,7 @@ Currently, no authentication is implemented.
 - **Response**: `201 Created`  
 Returns the created product with its ID and timestamps.
 
-#### 📄 List All Products (with Pagination)
+#### List All Products (with Pagination)
 - **GET** `/admin/products?page=0&size=5`
 - **Response**: `200 OK`  
 Returns paginated products list.
